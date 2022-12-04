@@ -88,6 +88,7 @@ public static class MauiProgram
 		services.AddTransientWithShellRoute<EventToCommandBehaviorPage, EventToCommandBehaviorViewModel>();
 		services.AddTransientWithShellRoute<IconTintColorBehaviorPage, IconTintColorBehaviorViewModel>();
 		services.AddTransientWithShellRoute<MaskedBehaviorPage, MaskedBehaviorViewModel>();
+		services.AddTransientWithShellRoute<MatchBehaviorPage, MatchBehaviorViewModel>();
 		services.AddTransientWithShellRoute<MaxLengthReachedBehaviorPage, MaxLengthReachedBehaviorViewModel>();
 		services.AddTransientWithShellRoute<MultiValidationBehaviorPage, MultiValidationBehaviorViewModel>();
 		services.AddTransientWithShellRoute<NumericValidationBehaviorPage, NumericValidationBehaviorViewModel>();

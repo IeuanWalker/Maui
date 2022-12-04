@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage
+    x:Class="CommunityToolkit.Maui.Sample.Pages.Behaviors.MatchBehaviorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors.MatchTypes;assembly=CommunityToolkit.Maui"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:pages="clr-namespace:CommunityToolkit.Maui.Sample.Pages"
+    xmlns:vm="clr-namespace:CommunityToolkit.Maui.Sample.ViewModels.Behaviors"
+    x:DataType="vm:MatchBehaviorViewModel"
+    x:TypeArguments="vm:MatchBehaviorViewModel">
+    <pages:BasePage.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="matchTypes" Type="{x:Type behaviors:MatchType}">
+                <behaviors:HashtagMatchType />
+                <behaviors:MentionMatchType />
+                <behaviors:HtmlLinkMatchType />
+            </x:Array>
+        </ResourceDictionary>
+    </pages:BasePage.Resources>
+    <VerticalStackLayout>
+        <Label Margin="0,20,0,40" Text="This sample demonstrate how to use match behavior with different match types." />
+        <Label FormattedText="{Binding Text}">
+            <Label.Behaviors>
+                <mct:MatchBehavior Command="{Binding TagTappedCommand}" MatchTypes="{StaticResource matchTypes}" />
+            </Label.Behaviors>
+        </Label>
+
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="this is a test">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </VerticalStackLayout>
+</pages:BasePage>

@@ -14,6 +14,9 @@ public class BehaviorsGalleryViewModel : BaseGalleryViewModel
 			SectionModel.Create<MaskedBehaviorViewModel>(nameof(MaskedBehavior),
 				"Masked text in entry with specific pattern"),
 
+			SectionModel.Create<MatchBehaviorViewModel>(nameof(MatchBehavior),
+				"Masked text in entry with specific pattern"),
+
 			SectionModel.Create<UserStoppedTypingBehaviorViewModel>(nameof(UserStoppedTypingBehavior),
 				"This behavior waits for the user to stop typing and then executes a Command"),
 
